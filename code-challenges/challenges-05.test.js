@@ -147,7 +147,6 @@ const listFoods = (recipe) => {
     let secondSpace = ingArr[i].indexOf(' ', firstSpace + 1); // get second occ of white space
 
     result.push(ingArr[i].slice(secondSpace + 1)); //slice starting at 1'st index AFTER second white space and push to array
-    console.log(result);
   }
   return result;
 };
