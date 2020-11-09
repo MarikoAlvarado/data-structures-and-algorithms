@@ -10,19 +10,19 @@ Write a function named templateWithJQuery that uses jQuery to get the html templ
 ------------------------------------------------------------------------------------------------ */
 let starWarsPeople = [
   {
-    "name": "Luke Skywalker",
-    "height": "172",
-    "eye_color": "blue"
+    'name': 'Luke Skywalker',
+    'height': '172',
+    'eye_color': 'blue'
   },
   {
-    "name": "C-3PO",
-    "height": "167",
-    "eye_color": "yellow"
+    'name': 'C-3PO',
+    'height': '167',
+    'eye_color': 'yellow'
   },
   {
-    "name": "R2-D2",
-    "height": "96",
-    "eye_color": "red"
+    'name': 'R2-D2',
+    'height': '96',
+    'eye_color': 'red'
   }
 ];
 
@@ -30,7 +30,7 @@ let starWarsPeople = [
 
 let $ = createSnippetWithJQuery(`
 <main>
-  <section id="template">
+  <section id='template'>
     <h2></h2>
     <h3></h3>
     <p></p>
@@ -147,7 +147,6 @@ const listFoods = (recipe) => {
     let secondSpace = ingArr[i].indexOf(' ', firstSpace + 1); // get second occ of white space
 
     result.push(ingArr[i].slice(secondSpace + 1)); //slice starting at 1'st index AFTER second white space and push to array
-    console.log(result);
   }
   return result;
 };
@@ -222,7 +221,7 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
+Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. '1,2,3'), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
 const totalSumCSV = (str) => {
@@ -275,7 +274,7 @@ describe('Testing challenge 1', () => {
     expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
     expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
     expect($('section:nth-child(4) p').text()).toStrictEqual('red');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
