@@ -143,10 +143,10 @@ const listFoods = (recipe) => {
 
   for (var i = 0; i < ingArr.length; i++) {
 
-    let firstSpace = ingArr[i].indexOf(' '); //get index of first occ of white space
-    let secondSpace = ingArr[i].indexOf(' ', firstSpace + 1); // get second occ of white space
+    let firstSpace = ingArr[i].indexOf(' ');
+    let secondSpace = ingArr[i].indexOf(' ', firstSpace + 1);
 
-    result.push(ingArr[i].slice(secondSpace + 1)); //slice starting at 1'st index AFTER second white space and push to array
+    result.push(ingArr[i].slice(secondSpace + 1));
   }
   return result;
 };
@@ -274,7 +274,7 @@ describe('Testing challenge 1', () => {
     expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
     expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
     expect($('section:nth-child(4) p').text()).toStrictEqual('red');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
