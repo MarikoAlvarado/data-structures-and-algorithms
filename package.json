@@ -13,6 +13,11 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^7.2.0",
+<<<<<<< HEAD
+=======
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+>>>>>>> bb9b79664efc579f811060a69fd325efd7dfcee9
     "jest": "^26.0.1",
     "mustache": "^4.0.1",
     "supertest": "^4.0.2"
