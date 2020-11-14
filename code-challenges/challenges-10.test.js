@@ -8,7 +8,7 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
-  //WIP
+  //     WIP
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
