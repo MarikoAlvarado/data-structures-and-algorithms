@@ -8,15 +8,16 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
 
-  // :::::: wip
-
-
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
   });
   return server;
 };
+app.get('/hello', helloHandler);
+function helloHandler(request, response) {
+  response.status(200).send('oh hi');
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -29,7 +30,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
