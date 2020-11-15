@@ -60,8 +60,7 @@ const count = (target, input) => {
   });
   console.log(myArr);
 };
-// let odd = arr.filter(n => n % 2);
-// return odd;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
