@@ -8,38 +8,68 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
 
+  const express = require('express');
+  const app = express();
+
+  app.get('/hello', helloHandler);
+  app.get('/aboutme', aboutmeHandler);
+  app.get('/favoritefoods', favefoodsHandler);
+
+
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
   });
   return server;
 };
-app.get('/hello', helloHandler);
+
 function helloHandler(request, response) {
-  response.status(200).send('oh hi');
+  response.status(200).send('yo!');
+}
+
+function aboutmeHandler(request, response) {
+  response.status(200).send('My name is Mariko. Some folx call me Riko. I have too many plants.');
+}
+
+function favefoodsHandler(request, response) {
+  let arr = ['Seafood Soondubu', 'seafood Pho', 'Elote', 'Chile Relleno', 'Poke'];
+  response.status(200).send(arr);
 }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
+ 
 Write a function named count that, given an integer and an array of arrays, uses either filter, map, or reduce to count the amount of times the integer is present in the array of arrays.
-
+ 
 Note: You might need to use the same method more than once.
-
+ 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-
+  let myTarget = target;
+  let myInput = input;
+  let myArr = [];
+  myInput.map(nest => {
+    nest.map(numbers => {
+      return numbers;
+    })
+      .map(each => {
+        myArr.push(each === myTarget);
+      });
+  });
+  console.log(myArr);
 };
+// let odd = arr.filter(n => n % 2);
+// return odd;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
+ 
 Write a function that, given an array of integer arrays as input, calculates the total sum of all the elements in the array.
-
+ 
 You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
-
+ 
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
@@ -49,13 +79,13 @@ const totalSum = (input) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
+ 
 Write a function named divisibleByFiveTwoToThePower that accepts an array of arrays as input.
-
+ 
 This function should first remove any elements that are not numbers or are not divisible by five.
-
+ 
 This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
-
+ 
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
@@ -65,12 +95,12 @@ const divisibleByFiveTwoToThePower = (input) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
-
+ 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
-
+ 
 The names should be combined into a single string with each character name separated by "and".
-
+ 
 For example, "C-3PO and Luke Skywalker".
 ------------------------------------------------------------------------------------------------ */
 
@@ -131,7 +161,7 @@ let findMaleAndFemale = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
-
+ 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
@@ -141,13 +171,13 @@ let findShortest = (data) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-10.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
