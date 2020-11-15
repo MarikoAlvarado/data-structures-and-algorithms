@@ -60,8 +60,7 @@ const count = (target, input) => {
   });
   console.log(myArr);
 };
-// let odd = arr.filter(n => n % 2);
-// return odd;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -74,7 +73,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  var something = {};
+  var sum = input.reduce((acc, val, idx) => {
+    val.forEach((one, two) => {
+      if (one == 0) something[two] = true;
+      if (!something[two]) acc += one;
+    });
+    return acc;
+  }, 0);
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
