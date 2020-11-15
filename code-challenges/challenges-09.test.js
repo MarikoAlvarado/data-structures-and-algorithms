@@ -254,11 +254,11 @@ let starWarsData = [{
 //get names of each character
 
 const returnNames = (arr) => {
-  let characters = arr.reduce((accumulator, character) => {
+  let char = arr.reduce((accumulator, character) => {
     accumulator.push(character.name);
     return accumulator;
   }, []);
-  return characters;
+  return char;
 };
 
 /* ------------------------------------------------------------------------------------------------
