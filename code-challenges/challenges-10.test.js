@@ -47,18 +47,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let myTarget = target;
-  let myInput = input;
-  let myArr = [];
-  myInput.map(nest => {
+  let counter = 0;
+  input.map(nest => {
     nest.map(numbers => {
-      return numbers;
+      if (numbers === target) {
+        counter++;
+      };
     })
-      .map(each => {
-        myArr.push(each === myTarget);
-      });
   });
-  console.log(myArr);
+  return counter;
 };
 
 
@@ -73,11 +70,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  var something = {};
+  var zero = {};
   var sum = input.reduce((acc, val, idx) => {
     val.forEach((one, two) => {
-      if (one == 0) something[two] = true;
-      if (!something[two]) acc += one;
+      if (one == 0) zero[two] = true;
+      if (!zero[two]) acc += one;
     });
     return acc;
   }, 0);
@@ -97,8 +94,15 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+  return input.map(firstNest => {
+    return firstNest.reduce((acc, secondNest) => {
+      if (typeof secondNest === "number" && !(secondNest % 5)) {
+        acc.push(Math.pow(2, secondNest));
+      }
+      return acc;
+    }, [])
+  });
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
