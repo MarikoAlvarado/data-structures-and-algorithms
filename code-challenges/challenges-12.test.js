@@ -9,7 +9,17 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let max = Math.max(...arr);
+  // let max = Math.max(...arr);
+  // return max;
+
+  var max = arr.reduce((acc, n) => {
+    //if accumulator is >= n, if > return acc, if < return n
+    if (acc >= n) {
+      return acc;
+    } else {
+      return n;
+    }
+  }, 0)
   return max;
 };
 
@@ -36,17 +46,18 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  let columnVals = new Array(stores.length).fill(0);
+  let columnVals = new Array(stores[0].length).fill(0);
 
   for (let i = 0; i <= stores.length - 1; i++) {
     for (let j = 0; j <= stores[i].length - 1; j++) {
       let value = stores[i][j];
       columnVals[j] += value;
-
+      console.log(columnVals);
     }
-    return columnVals;
   }
-};
+  return columnVals;
+}
+
 
 
 
@@ -61,7 +72,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let myArr = [];
+  hours.reduce((acc, value, idx) => {
+    myArr.push({ sales: `${data[idx]} cookies`, time: `${hours[idx]}` })
+  }, []);
+  return myArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +101,15 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let count = 0;
+  arr.map(item => {
+    item.items.map(type => {
+      if (type.name === 'Treats') {
+        count += type.quantity;
+      }
+    })
+  })
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
