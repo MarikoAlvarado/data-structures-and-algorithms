@@ -52,7 +52,6 @@ const grandTotal = (stores) => {
     for (let j = 0; j <= stores[i].length - 1; j++) {
       let value = stores[i][j];
       columnVals[j] += value;
-      console.log(columnVals);
     }
   }
   return columnVals;
