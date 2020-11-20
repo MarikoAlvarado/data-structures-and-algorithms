@@ -11,8 +11,12 @@ any other route should return status of 404
 const createServer = () => {
   const express = require('express');
   const app = express();
-
-
+  app.get('/', (request, response) => {
+    response.status(200).send(200);
+  })
+  app.delete('/things/1', (request, response) => {
+    response.status(405).send(405);
+  })
 
   var server = app.listen(3000, function () {
     var port = server.address().port;
@@ -20,6 +24,8 @@ const createServer = () => {
   });
   return server;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -30,16 +36,19 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
-};
+  let returnArr = arr.map(string => {
+    return string.replace(/^\w/, letter => letter.toUpperCase());
+  })
+  return returnArr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
+ 
 Write a function named biggerThanLuke that, given the Star Wars data, below, returns the names of the characters whose mass is greater than Luke's.
-
+ 
 The names should be combined into a single string with each character name separated by a dash.
-
+ 
 For example, "Lando Calrisian - Boba Fett - Princess Amidala".
 ------------------------------------------------------------------------------------------------ */
 
@@ -105,34 +114,42 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
-};
+  let myArr = [];
+  arr.forEach(character => {
+    if (character.mass > 77)
+      myArr.push(character.name)
+  })
+  return myArr.join(' - ');
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
-
+ 
 Here is an example of the input:
 [
   {name: 'Sweatshirt', price: 45},
   {name: 'Bookmark', price: 2.50},
   {name: 'Tote bag', price: 15}
 ];
-
+ 
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    return a.price - b.price;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
-
+ 
 Write a function that determines if a given URL is secure, beginning with https://
-
+ 
 Guard against malformed URLs, such as: https:missing-slashes.bad
-
+ 
 For example:
 http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
@@ -144,15 +161,15 @@ const isSecure = (url) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
-
+ 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
-
+ 
 This function should return either true or false to indicate if someone won the game.
-
+ 
 Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals consider writing one helper function that accepts three coordinate pairs and checks the values of the array at those locations. For instance helpCheck(row1, col1, row2, col2, row3, col3).
-
+ 
 Your function does not need to work for boards of any size other than 3x3.
-
+ 
 Here is a sample board:
 [
   ['X', '', 'O'],
@@ -167,13 +184,13 @@ const detectTicTacToeWin = (board) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenge-14.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', function () {
