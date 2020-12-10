@@ -13,4 +13,4 @@ I took the approach of looping through half of the length of the given array, on
 ## Solution
 <!-- Embedded whiteboard image -->
 
-![whiteboard solution](./assets/reverseArray.png)
+![whiteboard solution](../../assets/reverseArray.png)
