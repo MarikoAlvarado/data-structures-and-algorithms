@@ -43,8 +43,8 @@ class LinkedList {
       string += `{${current.value}}` + "->";
       current = current.next;
     }
-    reverse += `null`;
-    return reverse;
+    string += `null`;
+    return string;
   }
 }
 
