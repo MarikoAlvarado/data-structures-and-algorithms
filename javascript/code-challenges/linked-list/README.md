@@ -12,4 +12,8 @@ I took the approach of inserting each new node at the beginning of the list rath
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-N/A
+`insert()` - Inserts new node at beginning of linked list making whichever value that was added last, the head and pointing to the value that was previously head.
+
+`includes()` - Checks to see if a value exists within the linked list and returns either true or false.
+
+`toString()` - Returns the elements found in a linked list as a string.
