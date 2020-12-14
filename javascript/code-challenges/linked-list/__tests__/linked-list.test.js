@@ -26,18 +26,60 @@ describe('head property', () => {
     list.insert('a');
     list.insert('b');
     list.insert('c');
-    expect(list.head.value).toEqual('a');
+    expect(list.head.value).toEqual('c');
   })
 })
 
 //test 4
 describe('insert multiple', () => {
-  it('should insert all multiple nodes into list', () => {
+  it('should insert multiple nodes into list', () => {
     const list = new ll();//making a list to build and test against
     list.insert('a');
     list.insert('b');
     list.insert('c');
-    console.log(list.head);
-    expect(list.includes).toEqual('a', 'b', 'c');
+
+    let current = list.head.value;
+    expect(current).toEqual('c');
+    current = list.head.next;
+    expect(current.value).toEqual('b');
+    current = current.next;
+    expect(current.value).toEqual('a');
+
+  })
+})
+
+//test 5
+describe('find value', () => {
+  it('should return true if a value exists in linked list', () => {
+    const list = new ll();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+
+    expect(list.includes('b')).toBeTruthy();
+  })
+})
+
+//test 6
+describe('find value', () => {
+  it('should return true if a value exists in linked list', () => {
+    const list = new ll();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+
+    expect(list.includes('abc')).toBeFalsy();
+  })
+})
+
+//test 7
+describe('return all', () => {
+  it('should return all values from linked list', () => {
+    const list = new ll();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+
+    expect(list.toString()).toEqual('{a}->{b}->{c}-null');
   })
 })
