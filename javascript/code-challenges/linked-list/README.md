@@ -17,3 +17,7 @@ I took the approach of inserting each new node at the beginning of the list rath
 `includes()` - Checks to see if a value exists within the linked list and returns either true or false.
 
 `toString()` - Returns the elements found in a linked list as a string.
+
+## Resources
+
+Simon, Tahmina, Stacy, Tina
