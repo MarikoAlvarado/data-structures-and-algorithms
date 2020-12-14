@@ -7,3 +7,5 @@
 - [Array Shift](javascript/code-challenges/arrays/ArrayShift/README.md)
 
 - [Array Binary Search](javascript/code-challenges/arrays/arrayBinarySearch/README.md)
+
+- [Linked List](javascript/code-challenges/linked-list/README.md)
