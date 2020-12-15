@@ -36,6 +36,13 @@ class LinkedList {
     else { return false }
   }
 
+  // includes(value){
+  //   let currentNode = this.head;
+  //   while(currentNode !== null){
+  //     if(currentNode.value === value) return true;
+  //   }
+  // }
+
   toString(value) {
     let current = this.head;
     let string = '';
