@@ -9,3 +9,5 @@
 - [Array Binary Search](javascript/code-challenges/arrays/arrayBinarySearch/README.md)
 
 - [Linked List](javascript/code-challenges/linked-list/README.md)
+
+- [Linked List Insertions](javascript/code-challenges/linked-list/ll-insertions/README.md)
