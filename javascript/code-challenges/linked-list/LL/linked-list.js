@@ -53,6 +53,18 @@ class LinkedList {
     string += `null`;
     return string;
   }
+
+  findInd(k) {
+    let arr = [];
+    let current = this.head;//starting at head
+    while (this.next != null) { //loop as long as next is not null
+      arr.unshift(this.value); //stack value of node into arr
+      current = current.next; // start loop again with next node
+    }
+    arr.unshift(this.value); //shift the tail node into arr
+    return arr[k]; //return value in arr at index = k
+  }
+
 }
 
 module.exports = LinkedList;
