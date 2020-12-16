@@ -21,3 +21,32 @@ I took the approach of inserting each new node at the beginning of the list rath
 ## Resources
 
 Simon, Tahmina, Stacy, Tina
+
+# Kth From End
+<!-- Short summary or background information -->
+Find value at index K
+
+## Challenge
+<!-- Description of the challenge -->
+Write method for Linked List class that takes index K as a parameter, return the value of the k index node starting from the end of the list.
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I took the approach of unshifting each nodes value into an array and returning the array element found at index = k. The big O is O(n)
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+`insert()` - Inserts new node at beginning of linked list making whichever value that was added last, the head and pointing to the value that was previously head.
+
+`includes()` - Checks to see if a value exists within the linked list and returns either true or false.
+
+`toString()` - Returns the elements found in a linked list as a string.
+
+`findK()` - Return value at index k.
+
+## Resources
+
+Ricardo
+
+![whiteboard](kindex.png)
