@@ -13,3 +13,5 @@
 - [Linked List Insertions](javascript/code-challenges/linked-list/ll-insertions/README.md)
 
 - [Linked List Zip](javascript/code-challenges/llZip/README.md)
+
+- [Stack and Queue](javascript/code-challenges/stacksAndQueues/README.md)
