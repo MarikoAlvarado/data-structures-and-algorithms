@@ -15,3 +15,6 @@ I took the approach of coming up with the problem domain first and then writing 
 <!-- Embedded whiteboard image -->
 
 ![whiteboard](queuestacks.png)
+
+## Sources
+Simon,Ricardo,Nathan
