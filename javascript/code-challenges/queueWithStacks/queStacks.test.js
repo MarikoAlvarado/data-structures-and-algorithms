@@ -14,7 +14,7 @@ describe('enqueueing', () => {
 })
 
 describe('dequeueing', () => {
-  it('should push value from stackA into stackB', () => {
+  it('should push person from end of stackA into stackB', () => {
     const queue = new PseudoQueue();
     queue.enqueue('simon')
     queue.enqueue('nathan')
