@@ -15,3 +15,5 @@
 - [Linked List Zip](javascript/code-challenges/llZip/README.md)
 
 - [Stack and Queue](javascript/code-challenges/stacksAndQueues/README.md)
+
+- [Queue and Stacks](javascript/code-challenges/queueWithStacks/README.md)
