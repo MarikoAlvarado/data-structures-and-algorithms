@@ -18,4 +18,6 @@
 
 - [Queue and Stacks](javascript/code-challenges/queueWithStacks/README.md)
 
-- [Que of Dogs and Cats](javascript/code-challenges/fifoAnimalShelter/README.md)
+- [Queue of Dogs and Cats](javascript/code-challenges/fifoAnimalShelter/README.md)
+
+- [Multi-Bracket Validation](javascript/code-challenges/multiBracketValidation/README.md)
