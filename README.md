@@ -21,3 +21,5 @@
 - [Queue of Dogs and Cats](javascript/code-challenges/fifoAnimalShelter/README.md)
 
 - [Multi-Bracket Validation](javascript/code-challenges/multiBracketValidation/README.md)
+
+- [Trees](javascript/code-challenges/tree/README.md)
