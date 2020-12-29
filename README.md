@@ -23,3 +23,5 @@
 - [Multi-Bracket Validation](javascript/code-challenges/multiBracketValidation/README.md)
 
 - [Trees](javascript/code-challenges/tree/README.md)
+
+- [Return Max: Binary Tree](javascript/code-challenges/tree/README.md)

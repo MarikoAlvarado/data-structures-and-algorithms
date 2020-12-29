@@ -1,4 +1,22 @@
-# Trees
+# Challenge Summary CC16
+<!-- Short summary or background information -->
+Find the greatest integer in a Binary Tree
+
+## Challenge Description
+<!-- Description of the challenge -->
+Create an instance method `find-maximum-value` and return the greatest numeric value from within a Binary Tree without using built in methods.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The approach we took was to create a variable that would temporarily hold the current greatest integer, starting with the root node. Then we check each node within the tree using PreOrder traversal to determine whether or not the current node(left,right) existed and if so we would recursively call the GetMax method, sending it that nodes value to be compared to the the temp variable value, whichever number was greater would be established as the next comparing factor as other nodes were checked. The Big O for time is O(n) and the O(1) for space since we created a variable which stored a single value.
+
+## Solution
+<!-- Embedded whiteboard image -->
+
+![whiteboard](cc16.png)
+
+# Trees CC15
 <!-- Short summary or background information -->
 Create a Node class, a BinaryTree class and a BinarySearchTree class.
 
@@ -18,5 +36,6 @@ I took the approach of creating an add method with and O(h) for time and O(1) fo
 `add()`
 
 `preOrder()`
+
 
 
