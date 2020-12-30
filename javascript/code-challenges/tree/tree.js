@@ -1,6 +1,8 @@
 
 'use strict';
 
+const Queue = require('../stacksAndQueues/queues');
+
 class Node {
   constructor(value = 0, left = null, right = null) {
     this.value = value;
@@ -47,12 +49,14 @@ class BinaryTree {
 
   preOrder() {
     const results = [];
+
     let _walk = (node) => {
       results.push(node.value);
       if (node.left) _walk(node.left);
       if (node.right) _walk(node.right);
     }
     _walk(this.root)
+    return results;
   }
 
   inOrder(root) {
@@ -63,6 +67,7 @@ class BinaryTree {
       if (node.right) _walk(node.right);
     }
     _walk(this.root)
+    return results;
   }
 
   postOrder() {
@@ -73,18 +78,44 @@ class BinaryTree {
       results.push(node.value);
     }
     _walk(this.root)
+    return results;
   }
 
   findMaxValue() {
     let tempVar = this.root.value;
     let _walk = (node) => {
       if (node.value > tempVar) tempVar = node.value;
-      if (node.leftChild) { _walk(node.leftChild); }
-      if (node.rightChild) { _walk(node.rightChild); }
+      if (node.left) { _walk(node.left); }
+      if (node.right) { _walk(node.right); }
     }
     _walk(this.root);
     return tempVar;
   }
+
+  breadthFirst() {
+    if (!this.root) return null;
+
+    let breadthQueue = new Queue();
+    let outputArray = [];
+    let frontVariable;
+
+    breadthQueue.enqueue(this.root);
+
+    while (breadthQueue.peek() !== false) {
+
+      frontVariable = breadthQueue.dequeue();
+      outputArray.push(frontVariable.value.value);
+      if (frontVariable.value.left) {
+        breadthQueue.enqueue(frontVariable.value.left);
+      }
+      if (frontVariable.value.right) {
+        breadthQueue.enqueue(frontVariable.value.right);
+      }
+    }
+
+    return outputArray;
+  }
+
 }
 
-module.exports = BinaryTree;
+module.exports = { BinaryTree, Node };

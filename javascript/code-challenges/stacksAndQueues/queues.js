@@ -10,6 +10,7 @@ class Queue {
 
   enqueue(value) {
     // O(1)
+    console.log('enqueue for test', value);
     let node = new Node(value);
     if (!this.front) {
       this.front = this.rear;
