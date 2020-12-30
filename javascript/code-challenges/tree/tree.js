@@ -1,41 +1,121 @@
+
 'use strict';
 
-const BinarySearch = require('./binarySearchTree');
+const Queue = require('../stacksAndQueues/queues');
+
+class Node {
+  constructor(value = 0, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
+  }
+}
 
 class BinaryTree {
   constructor() {
     this.root = null;
-    this.array = [];
   }
 
-  preOrder(root) {
-    console.log(root);
-    if (!root) { throw new Error('there is no root'); }
-    else {
-      this.array.push(root)
+  add(value) {
+    if (typeof value !== 'number') {
+      return null;
     }
-    if (root.left !== null) {
-      this.array.push(root.left.value);
-      // preOrder(root.left)
+    if (!this.root) {
+      this.root = new Node(value);
+      return;
     }
-    if (root.right !== null) {
-      this.array.push(root.right.value)
-      // preOrder(root.right)
+    let _insert = (node) => {
+      if (value < node.value) {
+        if (node.left === null) {
+          node.left = new Node(value);
+          return;
+        }
+        else if (node.left !== null) {
+          return _insert(node.left);
+        }
+      }
+      else if (value >= node.value) {
+        if (node.right === null) {
+          node.right = new Node(value);
+          return;
+        }
+        else if (node.right !== null) {
+          return _insert(node.right);
+        }
+      }
     }
-    return this.array;
+    _insert(this.root);
   }
 
-  // inOrder(root) {
+  preOrder() {
+    const results = [];
 
-  //   if (root.left !== null) { inOrder(root.left) }
-  //   else if (root.right !== null) { preOrder(root.right) }
+    let _walk = (node) => {
+      results.push(node.value);
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+    }
+    _walk(this.root)
+    return results;
+  }
 
-  // }
+  inOrder(root) {
+    const results = [];
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      results.push(node.value);
+      if (node.right) _walk(node.right);
+    }
+    _walk(this.root)
+    return results;
+  }
 
-  // postOrder() {
+  postOrder() {
+    const results = [];
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+      results.push(node.value);
+    }
+    _walk(this.root)
+    return results;
+  }
 
-  // }
+  findMaxValue() {
+    let tempVar = this.root.value;
+    let _walk = (node) => {
+      if (node.value > tempVar) tempVar = node.value;
+      if (node.left) { _walk(node.left); }
+      if (node.right) { _walk(node.right); }
+    }
+    _walk(this.root);
+    return tempVar;
+  }
+
+  breadthFirst() {
+    if (!this.root) return null;
+
+    let breadthQueue = new Queue();
+    let outputArray = [];
+    let frontVariable;
+
+    breadthQueue.enqueue(this.root);
+
+    while (breadthQueue.peek() !== false) {
+
+      frontVariable = breadthQueue.dequeue();
+      outputArray.push(frontVariable.value.value);
+      if (frontVariable.value.left) {
+        breadthQueue.enqueue(frontVariable.value.left);
+      }
+      if (frontVariable.value.right) {
+        breadthQueue.enqueue(frontVariable.value.right);
+      }
+    }
+
+    return outputArray;
+  }
 
 }
 
-module.exports = BinaryTree;
+module.exports = { BinaryTree, Node };
