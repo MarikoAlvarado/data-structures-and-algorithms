@@ -27,3 +27,5 @@
 - [Return Max: Binary Tree](javascript/code-challenges/tree/README.md)
 
 - [Breadth-First](javascript/code-challenges/tree/README.md)
+
+- [FizzBuzz Tree](javascript/code-challenges/fizzBuzzTree/README.md)
