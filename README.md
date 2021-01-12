@@ -29,3 +29,5 @@
 - [Breadth-First](javascript/code-challenges/tree/README.md)
 
 - [FizzBuzz Tree](javascript/code-challenges/fizzBuzzTree/README.md)
+
+- [Insertion Sort](javascript/code-challenges/insertionSort/BLOG.md)

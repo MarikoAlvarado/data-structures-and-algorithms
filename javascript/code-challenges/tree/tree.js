@@ -98,7 +98,7 @@ class BinaryTree {
     let breadthQueue = new Queue();
     let outputArray = [];
     let frontVariable;
-
+    console.log('ROOT::::', this.root);
     breadthQueue.enqueue(this.root);
 
     while (breadthQueue.peek() !== false) {
