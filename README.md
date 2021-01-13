@@ -31,3 +31,5 @@
 - [FizzBuzz Tree](javascript/code-challenges/fizzBuzzTree/README.md)
 
 - [Insertion Sort](javascript/code-challenges/insertionSort/BLOG.md)
+
+- [Merge Sort](javascript/code-challenges/mergeSort/BLOG.md)

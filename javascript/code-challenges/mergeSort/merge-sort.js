@@ -2,7 +2,6 @@
 
 
 function mergeSort(arr) {
-  console.log('wtf', arr);
 
   if (arr.length <= 1) {
     return arr;

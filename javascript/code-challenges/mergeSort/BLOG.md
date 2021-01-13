@@ -49,4 +49,6 @@ ALGORITHM merge(left, right)
     - check for which ever integer at its current index position in the array is of lesser value than the other
     - that which is less will be pushed in the result arr and the index position of the array will bump up one increment, continuing the for loop until the length of either of the arrays has been reached. 
 
-**STEP 3** return the array of sorted integers with the remainder of what's left of either array.
+**STEP 3** return the array of sorted integers merged with the remainder of what's left of either array.
+
+[resources](https://medium.com/javascript-in-plain-english/javascript-merge-sort-3205891ac060)
