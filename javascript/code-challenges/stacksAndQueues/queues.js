@@ -12,9 +12,10 @@ class Queue {
     // O(1)
     console.log('enqueue for test', value);
     let node = new Node(value);
+    console.log('NODE???:::', node);
     if (!this.front) {
       this.front = this.rear;
-      this.rear = node;
+      // this.rear = node;
     } else {
       this.rear = node;
     }
@@ -29,8 +30,9 @@ class Queue {
     return remove;
   }
 
-  peek() {
+  peek(node) {
     // O(1)
+    console.log('QUEUE EMPTY???:', this.front);
     if (!this.front) { throw new Error('Queue is empty'); }
     return this.front;
   }
