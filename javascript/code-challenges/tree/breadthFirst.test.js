@@ -12,4 +12,3 @@ it('Can return an array of values in the Breadth First order.', () => {
   treeInstance.add(85);
   treeInstance.add(12);
   expect(treeInstance.breadthFirst()).toEqual([7, 5, 99, 4, 9, 85, 12]);
-})
