@@ -75,6 +75,21 @@ class HashMap {
       }
     }
   }
+
+  contains(key) {
+    let index = this.hash(key);
+    let current = this.map[index].head;
+    while (current) {
+      let keyOfObject = Object.keys(current.value);
+
+      if (keyOfObject[0] === key) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
 }
+
 module.exports = HashMap;
 
