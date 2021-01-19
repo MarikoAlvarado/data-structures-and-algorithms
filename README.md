@@ -35,3 +35,5 @@
 - [Merge Sort](javascript/code-challenges/mergeSort/BLOG.md)
 
 - [Hash Table](javascript/code-challenges/hashtable/README.md)
+
+- [Repeated Word](javascript/code-challenges/repeatedWord/README.md)
